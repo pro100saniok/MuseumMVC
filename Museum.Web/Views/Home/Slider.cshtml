@@ -1,0 +1,45 @@
+﻿@Styles.Render("~/Content/slider")
+@Scripts.Render("~/bundles/slider")
+<div class="flex-container">
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <a href="#"><img src="~/Content/Images/Slider/1.jpg" /></a>
+                <p>ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА.</p>
+            </li>
+
+            <li>
+                <a href="#"><img src="~/Content/Images/Slider/2.jpg" /></a>
+                <p>ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА.</p>
+            </li>
+
+            <li>
+                <a href="#"><img src="~/Content/Images/Slider/3.jpg" /></a>
+                <p>ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА.</p>
+            </li>
+
+            <li>
+                <a href="#"><img src="~/Content/Images/Slider/4.jpg" /></a>
+                <p>ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА.</p>
+            </li>
+
+            <li>
+                <a href="#"><img src="~/Content/Images/Slider/5.jpg" /></a>
+                <p>ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА.</p>
+            </li>
+
+            <li>
+                <a href="#"><img src="~/Content/Images/Slider/6.jpg" /></a>
+                <p>ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА.</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.flexslider').flexslider({
+            animation: 'fade',
+            controlsContainer: '.flexslider'
+        });
+    });
+</script>

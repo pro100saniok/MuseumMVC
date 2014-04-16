@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title>@ViewBag.Title - ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("МУЗЕЙ М. П. СТЕЛЬМАХА", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Головна", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Новини", "Index", "Blogs")</li>
+                    <li>@Html.ActionLink("Фотогалерея", "Index", "Imagess")</li>
+                    <li>@Html.ActionLink("Відеогалерея", "Video", "Home")</li>
+                    <li>@Html.ActionLink("Віртуальний тур", "Panorama", "Home")</li>
+                    <li>@Html.ActionLink("Музей дітям", "Child", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy;  Copyright © Oliynyk ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА - @DateTime.Now.Year Поширення дозволене лише за наявності гіперпосилання на першоджерело!</p>
+        </footer>
+    </div>
+</body>
+</html>

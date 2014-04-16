@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum.Core", "Museum.Core\Museum.Core.csproj", "{48299656-60EB-45BB-A91E-7C1411D60924}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum.Model", "Museum.Model\Museum.Model.csproj", "{FEAAF490-1791-47C4-B9F2-5BA42AEBB266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum.Resources", "Museum.Resources\Museum.Resources.csproj", "{200C84B8-1CB6-43D2-A928-54C37A432BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum.Service", "Museum.Service\Museum.Service.csproj", "{88DA356B-DA49-4EA3-9C7D-2EADA8068C66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum.Data", "Museum.Data\Museum.Data.csproj", "{A686AF4F-0D14-4A66-87E1-4E25E129D441}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum.Web", "Museum.Web\Museum.Web.csproj", "{EEB78D14-5BEA-4907-9065-4A047976B011}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum.Web.Tests", "Museum.Web.Tests\Museum.Web.Tests.csproj", "{B8FA340B-F449-4973-ACB0-977F5D053068}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48299656-60EB-45BB-A91E-7C1411D60924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48299656-60EB-45BB-A91E-7C1411D60924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48299656-60EB-45BB-A91E-7C1411D60924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48299656-60EB-45BB-A91E-7C1411D60924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEAAF490-1791-47C4-B9F2-5BA42AEBB266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEAAF490-1791-47C4-B9F2-5BA42AEBB266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEAAF490-1791-47C4-B9F2-5BA42AEBB266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEAAF490-1791-47C4-B9F2-5BA42AEBB266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{200C84B8-1CB6-43D2-A928-54C37A432BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200C84B8-1CB6-43D2-A928-54C37A432BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200C84B8-1CB6-43D2-A928-54C37A432BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{200C84B8-1CB6-43D2-A928-54C37A432BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DA356B-DA49-4EA3-9C7D-2EADA8068C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DA356B-DA49-4EA3-9C7D-2EADA8068C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DA356B-DA49-4EA3-9C7D-2EADA8068C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DA356B-DA49-4EA3-9C7D-2EADA8068C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A686AF4F-0D14-4A66-87E1-4E25E129D441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A686AF4F-0D14-4A66-87E1-4E25E129D441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A686AF4F-0D14-4A66-87E1-4E25E129D441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A686AF4F-0D14-4A66-87E1-4E25E129D441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB78D14-5BEA-4907-9065-4A047976B011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB78D14-5BEA-4907-9065-4A047976B011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB78D14-5BEA-4907-9065-4A047976B011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB78D14-5BEA-4907-9065-4A047976B011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8FA340B-F449-4973-ACB0-977F5D053068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8FA340B-F449-4973-ACB0-977F5D053068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8FA340B-F449-4973-ACB0-977F5D053068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8FA340B-F449-4973-ACB0-977F5D053068}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

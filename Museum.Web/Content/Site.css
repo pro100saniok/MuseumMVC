@@ -1,0 +1,122 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*Home_css______________________*/
+.title {
+}
+
+.about {
+    text-indent: 20px;
+    text-align: justify;
+}
+
+    .about img {
+        height: 425px;
+        width: 638px;
+    }
+
+.contact {
+}
+
+.charity {
+}
+
+    .charity .header-up {
+        font-weight: bold;
+    }
+
+    .charity .header-down {
+        text-align: center;
+        font-style: italic;
+    }
+
+    .charity .indent {
+        text-indent: 25px;
+    }
+
+    .charity .paragraph {
+        color: #000;
+        font-weight: bold;
+    }
+
+
+/*____________________________End_Home*/
+
+/*Account____________________________*/
+.text-error {
+}
+
+
+/*Slider_______________________________*/
+#slideshow {
+    position: relative;
+    height: 300px;
+}
+
+    #slideshow DIV {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 8;
+        -ms-opacity: 0.0;
+        opacity: 0.0;
+        height: 300px;
+        background-color: #FFF;
+    }
+
+        #slideshow DIV.active {
+            z-index: 10;
+            opacity: 1.0;
+        }
+
+        #slideshow DIV.last-active {
+            z-index: 9;
+        }
+
+        #slideshow DIV IMG {
+            height: 250px;
+            display: block;
+            border: 0;
+            margin-bottom: 10px;
+        }
+/*____________________________________________________End_slider*/
