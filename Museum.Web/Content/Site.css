@@ -58,6 +58,26 @@ input[type="checkbox"].input-validation-error {
 .contact {
 }
 
+article .history {
+}
+
+    article .history img {
+        width: 223px;
+        height: 346px;
+        text-indent: 20px;
+        border: 1px solid #333;
+        padding: 5px;
+        background-color: #EEEEEE;
+        float: left;
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+
+    article .history p {
+        text-indent: 20px;
+        text-align: justify;
+    }
+
 .charity {
 }
 
