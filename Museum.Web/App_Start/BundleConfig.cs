@@ -35,6 +35,14 @@ namespace Museum.Web
                 "~/Content/slider.css"
                 ));
 
+            //gallery css and js.
+          bundles.Add(new StyleBundle("~/Content/gallery").Include(
+                "~/Content/fancybox/jquery.fancybox.css",
+                 "~/Content/gallery.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/gallery").Include(
+              "~/Scripts/JS/Gallery/jquery.fancybox.js",
+              "~/Scripts/JS/Gallery/gallery.js"));
         }
     }
 }

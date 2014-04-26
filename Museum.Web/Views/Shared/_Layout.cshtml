@@ -7,6 +7,7 @@
     <title>@ViewBag.Title - ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <meta name="description" content="The description of my page" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,11 +23,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Головна", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Новини", "Index", "Blogs")</li>
-                    <li>@Html.ActionLink("Фотогалерея", "Index", "Imagess")</li>
-                    <li>@Html.ActionLink("Відеогалерея", "Video", "Home")</li>
-                    <li>@Html.ActionLink("Віртуальний тур", "Panorama", "Home")</li>
-                    <li>@Html.ActionLink("Музей дітям", "Child", "Home")</li>
+                    <li>@Html.ActionLink("Новини", "Index", "Article")</li>
+                    <li>@Html.ActionLink("Фотогалерея", "Index", "Gallery")</li>
+                    <li>@Html.ActionLink("Відеогалерея", "Index", "Video")</li>
+                    <li>@Html.ActionLink("Віртуальний тур", "Index", "Panorama")</li>
+                    <li>@Html.ActionLink("Музей дітям", "Index", "Child")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

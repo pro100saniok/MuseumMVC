@@ -1,0 +1,171 @@
+/*body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4C1B1B;
+}*/
+
+p {
+    margin: 0px 0px 1em 0px;
+}
+
+a {
+    outline: none;
+}
+
+.containers {
+    width: 90%;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: #eeeeee;
+    border: 1px solid #82d344;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #51af34;
+    position: relative;
+}
+
+/*.title {
+    width: 70%;
+    margin: 0px auto 40px;
+}
+
+    .title h1 {
+        text-align: center;
+        font-size: 36px;
+        text-transform: uppercase;
+        padding: 10px 10px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 1px #82d344;
+    }*/
+
+.gallery {
+    width: 90%;
+    margin: auto;
+}
+
+.filter {
+    background-color: #a9a9a9;
+    margin-bottom: 1em;
+    padding: 2em 0 2em 1em;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 5px #51af34;
+    -ms-box-shadow: 0 0 5px #51af34;
+    box-shadow: 0 0 5px #51af34;
+}
+
+    .filter span {
+        padding: 0 0 0 0;
+        font-family: Georgia, cursive;
+        font-style: italic;
+    }
+
+    .filter a {
+        color: #eeeeee;
+        font-size: .85em;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 3px 20px;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvElEQVR4XsWTwQnDMAxFq5JADoEuYbAhkHqEjuAROkJHygjdoB2h3SVHO7/5xsG3Jm4OFUgHW+/zBdJhbwiLtfYkIvcZuBSwTwAuCvR9/yiDs4iwdl2HBAwiMqxRAK4zNmcKrTWYxpjzFgPsW5j4oJQCc7vzzFQEvPeFo2cmCoQQyujM7BfYPcL/HQhL27ZIgB3H8b3Csp/78iJwTHaYVL01TfN1mfjPvoWJDuq6/vkWKtZpmhyA4msUEfcBCKNiRWhYkZIAAAAASUVORK5CYII=') /*../Content/Images/unchecked.png*/ no-repeat 0px 3px;
+        *background: url('../Content/Images/unchecked.png') no-repeat 0px 3px; /* For IE 6 and 7 */
+    }
+
+        .filter a:hover {
+            color: #006400;
+        }
+
+        .filter a.selected {
+            color: #006400;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAACTwAAAk8B95E4kAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADRSURBVDiNpZMxTkJREEXPIXYYCioqNsACfikNe6AmVi7CsBJXQGtpQahkFVaGHgttvBZ+kh/k4SNMMs3LPXfuy2RMgipwB4yoqx2wThIAgS2QC3vbskzbhyYJNQ00LTPtHWInea2M39WOerVQqaoN1LH6R19loC6BN6D/r4HaV5/VSQd+BO6T7I/1NycGfgED4EVdAQ8t/FRKOAdytKZbYAN8A4vCKgPMTyUgyYc6A4ZJ3kuTS184mHwCZ2G4YI3nDHYAalMLdbS/LFcck9ee8w9AtZCAYOEqVwAAAABJRU5ErkJggg==') /*../Content/Images/checked.png*/ no-repeat 0px 3px;
+            *background: url('../Content/Images/checked.png') no-repeat 0px 3px; /* For IE 6 and 7 */
+        }
+
+.thumbnail_wrap {
+    position: relative;
+}
+
+a.thumbnaill {
+    position: absolute;
+}
+
+    a.thumbnaill img {
+        width: 75px;
+        height: 75px;
+        background-color: #82d344;
+        padding: 2px;
+        -webkit-box-shadow: 0 0 4px #51af34;
+        -ms-box-shadow: 0 0 4px #51af34;
+        box-shadow: 0 0 4px #51af34;
+    }
+
+        a.thumbnaill img:hover {
+            -webkit-box-shadow: 0 0 4px #4C1B1B;
+            -ms-box-shadow: 0 0 4px #4C1B1B;
+            box-shadow: 0 0 4px #4C1B1B;
+        }
+
+.clear_floats {
+    clear: both;
+    line-height: 1px;
+}
+
+/* Horizontal Media Queries */
+@media screen and (min-height: 50px) and (max-height: 520px) {
+    .title h1 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-height: 521px) and (max-height: 700px) {
+    .title h1 {
+        font-size: 24px;
+    }
+}
+
+
+/* Vertical Media Queries */
+@media screen and (min-width: 50px) and (max-width: 500px) {
+    /*.title h1 {
+        font-size: 18px;
+    }*/
+
+    /*body {
+        padding: 0px 5px;
+    }*/
+
+    .gallery {
+        width: auto;
+    }
+
+    .filter span {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .filter a {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+    /*.title h1 {
+        font-size: 24px;
+    }*/
+
+    .filter span {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .filter a {
+        display: block;
+        width: 35%;
+        float: left;
+    }
+}
+
+@media screen and (min-width: 961px) {
+    .filter span {
+        padding-right: 20px;
+    }
+}

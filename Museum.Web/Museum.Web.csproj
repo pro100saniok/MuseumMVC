@@ -40,6 +40,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC5.3.2.0.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -96,6 +105,9 @@
     <Reference Include="Newtonsoft.Json">
       <Private>True</Private>
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -156,21 +168,136 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\ChildController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PanoramaController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fancybox\blank.gif" />
+    <Content Include="Content\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Content\fancybox\fancybox_loading.gif" />
+    <Content Include="Content\fancybox\fancybox_overlay.png" />
+    <Content Include="Content\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Content\fancybox\fancybox_sprite.png" />
+    <Content Include="Content\fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="Content\fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Content\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Content\fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="Content\fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Content\fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Content\fancybox\jquery.fancybox.css" />
+    <Content Include="Content\gallery.css" />
+    <Content Include="Content\Images\Gallery\photos\city-1-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-1.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-10-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-10.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-11-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-11.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-2-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-2.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-3-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-3.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-4-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-4.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-5-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-5.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-6-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-6.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-7-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-7.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-8-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-8.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-9-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\city-9.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-1-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-1.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-10-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-10.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-2-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-2.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-3-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-3.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-4-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-4.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-5-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-5.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-6-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-6.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-7-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-7.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-8-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-8.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-9-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\lake-9.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-1-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-1.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-2-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-2.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-3-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-3.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-4-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-4.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-5-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-5.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-6-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-6.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-7-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-7.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-8-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-8.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-9-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\park-9.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-1-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-1.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-10-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-10.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-2-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-2.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-3-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-3.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-4-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-4.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-5-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-5.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-6-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-6.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-7-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-7.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-8-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-8.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-9-thumbnail.jpg" />
+    <Content Include="Content\Images\Gallery\photos\wired-9.jpg" />
+    <Content Include="Content\gallery_ie.css" />
+    <Content Include="Scripts\JS\Gallery\gallery.js" />
+    <Content Include="Scripts\JS\Gallery\html5shiv.js" />
+    <Content Include="Content\Images\checked.png" />
+    <Content Include="Content\Images\Gallery\Stelmah\101.JPG" />
+    <Content Include="Content\Images\Gallery\Stelmah\108.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\109.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\110.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\111.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\112.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\113.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\116.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\118.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\119.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\120.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\121.jpg" />
+    <Content Include="Content\Images\Gallery\Stelmah\122.jpg" />
     <Content Include="Content\Images\Main-content\museum.jpg" />
     <Content Include="Content\Images\Main-content\stelmah.jpg" />
     <Content Include="Content\Images\Main-content\tranzit.jpg" />
@@ -181,6 +308,7 @@
     <Content Include="Content\Images\Slider\5.JPG" />
     <Content Include="Content\Images\Slider\6.JPG" />
     <Content Include="Content\Images\Slider\arrows.png" />
+    <Content Include="Content\Images\unchecked.png" />
     <Content Include="Content\slider.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -196,6 +324,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JS\Gallery\jquery.fancybox.js" />
+    <Content Include="Scripts\JS\Gallery\jquery.fancybox.pack.js" />
     <Content Include="Scripts\JS\Slider\jquery.flexslider-min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
@@ -229,10 +359,22 @@
     <Content Include="Views\Home\CharityEvent.cshtml" />
     <Content Include="Views\Home\HistoryMuseum.cshtml" />
     <Content Include="Views\Home\Slider.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Gallery\Test.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Panorama\Index.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Child\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\Gallery\" />
+    <ProjectReference Include="..\Museum.Core\Museum.Core.csproj">
+      <Project>{48299656-60EB-45BB-A91E-7C1411D60924}</Project>
+      <Name>Museum.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Museum.Data\Museum.Data.csproj">
+      <Project>{A686AF4F-0D14-4A66-87E1-4E25E129D441}</Project>
+      <Name>Museum.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -241,6 +383,7 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

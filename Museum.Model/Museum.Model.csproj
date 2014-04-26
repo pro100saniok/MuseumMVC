@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Gallery\Image.cs" />
+    <Compile Include="Models\Gallery\ImageCategory.cs" />
     <Compile Include="Models\User\Role.cs" />
     <Compile Include="Models\User\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

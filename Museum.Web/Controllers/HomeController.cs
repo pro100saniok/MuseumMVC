@@ -39,5 +39,6 @@ namespace Museum.Web.Controllers
         {
             return PartialView();
         }
+         
     }
 }

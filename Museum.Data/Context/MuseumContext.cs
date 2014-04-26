@@ -1,23 +1,34 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Museum.Model.Models.Gallery;
 using Museum.Model.Models.User;
 
 namespace Museum.Data.Context
 {
-    class MuseumContext : DbContext
+
+    public class ApplicationDbContext : IdentityDbContext<ApplicationDbContext.ApplicationUser>
     {
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
-
-        public MuseumContext()
-            : base("Name=MuseumStelmahaContext")
+        public class ApplicationUser : IdentityUser
         {
 
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        public ApplicationDbContext()
+            : base("MuseumStelmahaContext")
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
         }
+        //public DbSet<User> Users { get; set; }
+        //public DbSet<Role> Roles { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<ImageCategory> ImageCategories { get; set; }
     }
+
+
+    //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    //{
+    //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+    //}
+
 }

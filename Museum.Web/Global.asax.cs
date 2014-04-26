@@ -1,6 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Data.Entity;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Museum.Data.Context;
 
 namespace Museum.Web
 {
@@ -12,6 +14,7 @@ namespace Museum.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer<ApplicationDbContext>(null);
         }
     }
 }
