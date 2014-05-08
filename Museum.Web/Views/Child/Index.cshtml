@@ -8,4 +8,248 @@
     <h1>@ViewBag.Message.</h1>
     <h2>@ViewBag.Title.</h2>
 </hgroup>
+@Styles.Render("~/Content/bookblock")
 
+<div class="bb-custom-wrapper">
+    <div id="bb-bookblock" class="bb-bookblock">
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/01.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/02.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/03.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/04.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/05.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/06.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/07.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/08.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/09.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/10.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/11.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/12.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/13.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/14.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/15.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/16.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/17.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/18.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/19.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/20.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/21.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/22.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/23.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/24.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/25.jpg" alt=" " />
+            </a>
+        </div>
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/26.jpg" alt=" " />
+            </a>
+        </div>
+
+        <div class="bb-item">
+            <a href=" ">
+                <img src="~/Content/Images/Child/27.jpg" alt=" " />
+            </a>
+        </div>
+    </div>
+    <nav>
+        <a id="bb-nav-first" href="#" class="bb-custom-icon bb-custom-icon-first">Перша сторінка</a>
+        <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Попередня</a>
+        <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Наступна</a>
+        <a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Останя сторінка</a>
+    </nav>
+</div>
+@Scripts.Render("~/bundles/bookblock")
+<script>
+    var Page = (function () {
+
+        var config = {
+            $bookBlock: $('#bb-bookblock'),
+            $navNext: $('#bb-nav-next'),
+            $navPrev: $('#bb-nav-prev'),
+            $navFirst: $('#bb-nav-first'),
+            $navLast: $('#bb-nav-last')
+        },
+            init = function () {
+                config.$bookBlock.bookblock({
+                    speed: 800,
+                    shadowSides: 0.8,
+                    shadowFlip: 0.7
+                });
+                initEvents();
+            },
+            initEvents = function () {
+
+                var $slides = config.$bookBlock.children();
+
+                // add navigation events
+                config.$navNext.on('click touchstart', function () {
+                    config.$bookBlock.bookblock('next');
+                    return false;
+                });
+
+                config.$navPrev.on('click touchstart', function () {
+                    config.$bookBlock.bookblock('prev');
+                    return false;
+                });
+
+                config.$navFirst.on('click touchstart', function () {
+                    config.$bookBlock.bookblock('first');
+                    return false;
+                });
+
+                config.$navLast.on('click touchstart', function () {
+                    config.$bookBlock.bookblock('last');
+                    return false;
+                });
+
+                // add swipe events
+                $slides.on({
+                    'swipeleft': function (event) {
+                        config.$bookBlock.bookblock('next');
+                        return false;
+                    },
+                    'swiperight': function (event) {
+                        config.$bookBlock.bookblock('prev');
+                        return false;
+                    }
+                });
+
+                // add keyboard events
+                $(document).keydown(function (e) {
+                    var keyCode = e.keyCode || e.which,
+                        arrow = {
+                            left: 37,
+                            up: 38,
+                            right: 39,
+                            down: 40
+                        };
+
+                    switch (keyCode) {
+                        case arrow.left:
+                            config.$bookBlock.bookblock('prev');
+                            break;
+                        case arrow.right:
+                            config.$bookBlock.bookblock('next');
+                            break;
+                    }
+                });
+            };
+
+        return { init: init };
+
+    })();
+</script>
+<script>
+    Page.init();
+</script>

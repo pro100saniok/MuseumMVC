@@ -6,6 +6,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <title>@ViewBag.Title - ЛІТЕРАТУРНО-МЕМОРІАЛЬНИЙ МУЗЕЙ М. П. СТЕЛЬМАХА</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fancybox")
     @Scripts.Render("~/bundles/modernizr")
     <meta name="description" content="The description of my page" />
 </head>
@@ -35,6 +36,7 @@
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/fancybox")
     @RenderSection("scripts", required: false)
     <div class="container body-content">
         @RenderBody()

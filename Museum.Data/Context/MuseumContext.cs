@@ -1,8 +1,6 @@
 ﻿using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Museum.Model.Models.Gallery;
-using Museum.Model.Models.User;
 
 namespace Museum.Data.Context
 {
@@ -24,11 +22,4 @@ namespace Museum.Data.Context
         public DbSet<Image> Images { get; set; }
         public DbSet<ImageCategory> ImageCategories { get; set; }
     }
-
-
-    //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-    //{
-    //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-    //}
-
 }

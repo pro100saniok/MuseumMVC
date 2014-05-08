@@ -1,0 +1,247 @@
+.bb-bookblock {
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-perspective: 1300px;
+    backface-visibility: hidden;
+    -ms-perspective: 1300px;
+    -o-perspective: 1300px;
+    -webkit-perspective: 1300px;
+    perspective: 1300px;
+    position: relative;
+    z-index: 100;
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+}
+
+.bb-page {
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: absolute;
+    -moz-transition-property: -moz-transform;
+    -ms-transition-property: transform;
+    -o-transition-property: transform;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform;
+}
+
+.bb-vertical .bb-page {
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    -moz-transform-origin: left center;
+    -ms-transform-origin: left center;
+    -o-transform-origin: left center;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.bb-horizontal .bb-page {
+    top: 50%;
+    width: 100%;
+    height: 50%;
+    -moz-transform-origin: center top;
+    -ms-transform-origin: center top;
+    -o-transform-origin: center top;
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+}
+
+.bb-page > div,
+.bb-outer,
+.bb-content,
+.bb-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.bb-outer {
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.bb-vertical .bb-content {
+    width: 200%;
+}
+
+.bb-horizontal .bb-content {
+    height: 200%;
+}
+
+.bb-page > div {
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    width: 100%;
+}
+
+    .bb-page > div:not(:only-child) {
+        -moz-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+.bb-vertical .bb-back {
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.bb-horizontal .bb-back {
+    -moz-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+    -o-transform: rotateX(-180deg);
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+}
+
+.bb-outer {
+    z-index: 999;
+    overflow: hidden;
+    width: 100%;
+}
+
+.bb-overlay,
+.bb-flipoverlay {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+}
+
+.bb-flipoverlay {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* */
+
+.bb-bookblock.bb-vertical > div.bb-page:first-child,
+.bb-bookblock.bb-vertical > div.bb-page:first-child .bb-back {
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.bb-bookblock.bb-horizontal > div.bb-page:first-child,
+.bb-bookblock.bb-horizontal > div.bb-page:first-child .bb-back {
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+/* Content display */
+.bb-vertical .bb-front .bb-content {
+    left: -100%;
+}
+
+.bb-horizontal .bb-front .bb-content {
+    top: -100%;
+}
+
+/* Flipping classes */
+.bb-vertical .bb-flip-next,
+.bb-vertical .bb-flip-initial {
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.bb-vertical .bb-flip-prev {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.bb-horizontal .bb-flip-next,
+.bb-horizontal .bb-flip-initial {
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+.bb-horizontal .bb-flip-prev {
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+.bb-vertical .bb-flip-next-end {
+    -moz-transform: rotateY(-15deg);
+    -ms-transform: rotateY(-15deg);
+    -o-transform: rotateY(-15deg);
+    -webkit-transform: rotateY(-15deg);
+    transform: rotateY(-15deg);
+}
+
+.bb-vertical .bb-flip-prev-end {
+    -moz-transform: rotateY(-165deg);
+    -ms-transform: rotateY(-165deg);
+    -o-transform: rotateY(-165deg);
+    -webkit-transform: rotateY(-165deg);
+    transform: rotateY(-165deg);
+}
+
+.bb-horizontal .bb-flip-next-end {
+    -moz-transform: rotateX(15deg);
+    -ms-transform: rotateX(15deg);
+    -o-transform: rotateX(15deg);
+    -webkit-transform: rotateX(15deg);
+    transform: rotateX(15deg);
+}
+
+.bb-horizontal .bb-flip-prev-end {
+    -moz-transform: rotateX(165deg);
+    -ms-transform: rotateX(165deg);
+    -o-transform: rotateX(165deg);
+    -webkit-transform: rotateX(165deg);
+    transform: rotateX(165deg);
+}
+
+.bb-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+/* No JS */
+.no-js .bb-bookblock,
+.no-js ul.bb-custom-grid li {
+    width: auto;
+    height: auto;
+}
+
+.no-js .bb-item {
+    position: relative;
+    display: block;
+}

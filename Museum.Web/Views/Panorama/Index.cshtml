@@ -8,3 +8,16 @@
     <h1>@ViewBag.Message.</h1>
     <h2>@ViewBag.Title.</h2>
 </hgroup>
+@Styles.Render("~/Content/panorama")
+@Scripts.Render("~/bundles/panorama")
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("img.advancedpanorama").panorama({
+            auto_start: 0,
+            start_position: 1527
+        });
+        $('.thickbox').fancybox();
+    });
+</script>
+@Scripts.Render("~/bundles/advancedpanorama")
+@Html.Partial("Panorama")

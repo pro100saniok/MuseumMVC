@@ -34,15 +34,36 @@ namespace Museum.Web
             bundles.Add(new StyleBundle("~/Content/slider").Include(
                 "~/Content/slider.css"
                 ));
+            //fancybox css and js.
+            bundles.Add(new StyleBundle("~/Content/fancybox").Include(
+                 "~/Content/fancybox/jquery.fancybox.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/fancybox").Include(
+              "~/Scripts/JS/Gallery/jquery.fancybox.js"));
 
             //gallery css and js.
-          bundles.Add(new StyleBundle("~/Content/gallery").Include(
-                "~/Content/fancybox/jquery.fancybox.css",
-                 "~/Content/gallery.css"));
+            bundles.Add(new StyleBundle("~/Content/gallery").Include(
+                  "~/Content/gallery.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/gallery").Include(
-              "~/Scripts/JS/Gallery/jquery.fancybox.js",
-              "~/Scripts/JS/Gallery/gallery.js"));
+            "~/Scripts/JS/Gallery/gallery.js"));
+
+            //bookblock css and js.
+            bundles.Add(new StyleBundle("~/Content/bookblock").Include(
+                "~/Content/bookblock/bookblock.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/bookblock").Include(
+                "~/Scripts/JS/Bookblock/jquery.bookblock*"));
+
+            //panorama css and js.
+            bundles.Add(new StyleBundle("~/Content/panorama").Include(
+                "~/Content/panorama/jquery.panorama.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/panorama").Include(
+            "~/Scripts/JS/Panorama/jquery.panorama.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/advancedpanorama").Include(
+            "~/Scripts/JS/Panorama/jquery.advanced-panorama.js"));
         }
     }
 }

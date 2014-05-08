@@ -73,7 +73,6 @@ namespace Museum.Data.Infrastructure
         /// <returns></returns>
         public async Task InsertAsync(TEntity entity)
         {
-
             DbSet.Add(entity);
             await _dbContext.SaveChangesAsync();
         }
